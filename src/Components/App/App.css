@@ -1,0 +1,26 @@
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #D0D5D9;
+    color: #575759;
+    font-family: 'Work-Sans', sans-serif;
+    font-weight: 500;
+}
+
+h1, h2 {
+    font-family: "Poppins", sans-serif;
+
+}
+
+h1 .highlight {
+    color: #F23005;
+}
+
+
