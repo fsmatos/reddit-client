@@ -1,8 +1,9 @@
 .nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 8px;
+    background-color: #f2f2f2;
     box-shadow: 0px 1px 5px -2px #575759;
-    padding: 10px;
 }
 
 .logo {
@@ -10,12 +11,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    cursor: pointer;
 }
 
-.logo img {
-    width: 15%;
-    padding-left: 18px;
+.reddit-logo {
+    width: 10%;
+    align-items: center;
 }
 
 .search {
@@ -32,26 +32,11 @@
 }
 
 .about {
-    padding-right: 10px;
-    cursor: pointer;
-    transition: .2s;
-}
-
-.about:hover {
-    color: #F23005;
+    padding-right: 5px;
 }
 
 .issue {
-    padding-left: 10px;
-    padding-right: 25px;
-    cursor: pointer;
-}
-
-.issue:hover {
-    color: #F23005;
-}
-
-strong {
-    color: #F23005;
+    padding-left: 5px;
+    padding-right: 10px;
 }
 

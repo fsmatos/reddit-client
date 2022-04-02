@@ -8,17 +8,14 @@
 .nav-bar {
     grid-column: 1 / 6;
     grid-row: 1 / 2;
-    background-color: #f2f2f2;
 }
 
 .footer {
     grid-column: 1 / 6;
     grid-row: 4 / 5;
-    background-color: #f2f2f2;
 }
 
 .filter {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
-    display: flex;
 }

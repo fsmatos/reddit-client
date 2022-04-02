@@ -3,10 +3,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-items: center;
-    align-items: center;
     background-color: #f2f2f2;
     border-radius: 8px;
     box-shadow: 1px 1px 5px -2px #575759;
+    padding: 15px;
 }
 
 .icon {
