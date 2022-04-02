@@ -1,8 +1,8 @@
 .post-container {
     display: grid;
-    grid-auto-rows: 200px;
+    grid-auto-rows: auto;
     grid-auto-flow: row;
-    grid-gap: 20px;
+    grid-gap: 15px;
 }
 
 .individual-post {
@@ -11,20 +11,72 @@
     box-shadow: 1px 1px 5px -2px #575759;
     display: grid;
     grid-template-columns: 1fr 0.25fr;
-    padding: 10px;
-    padding-left: 30px;
-    grid-gap: 20px;
+    grid-template-rows: 1fr 0.25fr auto;
+    padding: 30px;
+    grid-gap: 15px;
 }
 
 .post-text {
     grid-column: 1 / 2;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     align-items: center;
+    padding-top: 10px;
+    grid-gap: 15px;
 }
 
 .post-image {
     grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.post-share {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-container {
+    border-top: 0.5px solid #575759;
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+    transition: 0.2s;
+}
+
+.individual-comment {
+    padding: 20px;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 20px;
+    align-items: center;
+    background-color: #D0D5D9;
+    border-radius: 8px;
+}
+
+.author-comment-image {
+    grid-column: 1 / 2;
+    background-color: #575759;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+}
+
+.author-comment-info {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.author-comment-name {
+    padding-bottom: 8px;
+}
+
+.author-comment-time {
+    grid-column: 3 / 4;
 }
 
 .post-author {
@@ -37,13 +89,6 @@
     grid-row: 2 / 3;
 }
 
-.post-share {
-    grid-row: 3 / 4;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .post-vote {
     display: flex;
     justify-content: space-evenly;
@@ -54,10 +99,8 @@
     justify-content: space-between;
     transition: 0.2s;
     cursor: pointer;
-}
-
-.post-comments:hover {
-    color: #F23005;
+    border-radius: 8px;
+    padding: 8px;
 }
 
 .post-share-comments {
@@ -67,8 +110,8 @@
 .post-subreddit-image {
     background-color: #575759;
     border-radius: 50px;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 }
 
 .post-on-subreddit {
@@ -85,5 +128,9 @@
 }
 
 .arrow:hover {
+    color: #F23005;
+}
+
+.highlight {
     color: #F23005;
 }

@@ -58,6 +58,13 @@ export const Subreddit = () => {
                     <p className="subreddit-subs">No. Subscribers</p>
                 </div>
             </li>
+            <li className="subreddit-page">
+                <div className="subreddit-image"></div>
+                <div className="subreddit-info">
+                    <h3 className="subreddit-title">Subreddit Title</h3>
+                    <p className="subreddit-subs">No. Subscribers</p>
+                </div>
+            </li>
         </ul>
     </div>
   );
