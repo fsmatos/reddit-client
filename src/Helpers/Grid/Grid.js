@@ -4,7 +4,7 @@ import {Navbar} from '../../Components/Navbar/Navbar';
 import { Footer } from "../../Components/Footer/Footer";
 import { Filter } from "../../Components/Filter/Filter";
 import { Subreddit } from "../../Components/Subreddit/Subreddit";
-
+import { Post } from "../../Components/Post/Post";
 export const Grid = () => {
   return (
     <div className="container">
@@ -17,7 +17,9 @@ export const Grid = () => {
         <div className="filter">
             <Filter />
         </div>
-        <div className="post"></div>
+        <div className="post">
+            <Post />
+        </div>
         <div className="footer">
             <Footer />
         </div>
