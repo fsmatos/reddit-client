@@ -33,10 +33,18 @@
 
 .about {
     padding-right: 5px;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
 .issue {
     padding-left: 5px;
     padding-right: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.about:hover, .issue:hover {
+    color: #F23005;
 }
 

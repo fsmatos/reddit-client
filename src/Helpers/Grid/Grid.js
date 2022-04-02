@@ -3,6 +3,7 @@ import './Grid.css';
 import {Navbar} from '../../Components/Navbar/Navbar';
 import { Footer } from "../../Components/Footer/Footer";
 import { Filter } from "../../Components/Filter/Filter";
+import { Subreddit } from "../../Components/Subreddit/Subreddit";
 
 export const Grid = () => {
   return (
@@ -10,7 +11,9 @@ export const Grid = () => {
         <div className="nav-bar">
             <Navbar />
         </div>
-        <div className="subreddit"></div>
+        <div className="subreddit">
+            <Subreddit />
+        </div>
         <div className="filter">
             <Filter />
         </div>
