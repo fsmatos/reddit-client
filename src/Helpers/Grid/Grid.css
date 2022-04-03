@@ -5,7 +5,7 @@
     grid-gap: 20px 20px;
 }
 
-.nav-bar {
+header{
     grid-column: 1 / 6;
     grid-row: 1 / 2;
 }
@@ -15,17 +15,17 @@
     grid-row: 2 / 3;
 }
 
-.subreddit {
+aside {
     grid-column: 2 / 3;
     grid-row: 2 / 4;
 }
 
-.post {
+main {
     grid-column: 3 / 4;
     grid-row: 3 / 4;
 }
 
-.footer {
+footer {
     grid-column: 1 / 6;
     grid-row: 4 / 5;
 }

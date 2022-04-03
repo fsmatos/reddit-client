@@ -5,7 +5,7 @@ import reddit from "../../Assets/reddit-logo.png"
 
 export const Navbar = () => {
   return (
-    <div className="nav">
+    <nav>
       <div className="logo">
         <img className="reddit-logo" src={reddit} />
         <h1>Reddit <strong>Mini</strong></h1>
@@ -17,6 +17,6 @@ export const Navbar = () => {
         <a className="about">About</a>
         <a className="issue">Issue</a>
       </div>
-    </div>
+    </nav>
   );
 };

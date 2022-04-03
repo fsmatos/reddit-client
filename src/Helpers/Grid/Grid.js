@@ -8,21 +8,21 @@ import { Post } from "../../Components/Post/Post";
 export const Grid = () => {
   return (
     <div className="container">
-        <div className="nav-bar">
+        <header>
             <Navbar />
-        </div>
-        <div className="subreddit">
+        </header>
+        <aside>
             <Subreddit />
-        </div>
+        </aside>
         <div className="filter">
             <Filter />
         </div>
-        <div className="post">
+        <main>
             <Post />
-        </div>
-        <div className="footer">
+        </main>
+        <footer>
             <Footer />
-        </div>
+        </footer>
     </div>
   );
 };
