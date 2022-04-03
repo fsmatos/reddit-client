@@ -1,21 +1,27 @@
 nav {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto 1fr;
     padding: 8px;
     background-color: #f2f2f2;
     box-shadow: 0px 1px 5px -2px #575759;
+    justify-items: center;
 }
 
 .logo {
     grid-column: 1 / 2;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .reddit-logo {
-    width: 10%;
+    height: auto;
+    max-width: 50px;
     align-items: center;
+}
+
+.logo h1 {
+    display: none;
 }
 
 .search {
@@ -24,17 +30,12 @@ nav {
     align-items: center;
 }
 
-.info {
-    grid-column: 3 / 4;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
 
 .about {
     padding-right: 5px;
     transition: 0.2s;
     cursor: pointer;
+    display: none;
 }
 
 .issue {
@@ -42,9 +43,35 @@ nav {
     padding-right: 10px;
     transition: 0.2s;
     cursor: pointer;
+    display: none;
 }
 
 .about:hover, .issue:hover {
     color: #F23005;
 }
 
+@media screen and (min-width: 965px) {
+    nav {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+    }
+    
+    .logo h1 {
+        display: block;
+    }
+    
+    .info {
+        grid-column: 3 / 4;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    
+    .about {
+        display: block;
+    }
+    
+    .issue {
+        display: block;
+    }
+}

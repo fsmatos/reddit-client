@@ -6,7 +6,7 @@
 .input {
     border-radius: 5px;
     border: 0px;
-    width: 650px;
+    width: 75px;
     height: 40px;
     border: 0.1px solid #57575944;
     padding: 10px;
@@ -14,12 +14,53 @@
 }
 
 .magnifying-glass {
-    font-size: 20px;
-    font-weight: lighter;
-    cursor: pointer;
-    transition: 0.2s;
+    display: none;
 }
 
-.magnifying-glass:hover {
-    color: #F23005;
+@media screen and (min-width: 235px) {
+    .input {
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 335px) {
+    .input {
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 435px) {
+    .input {
+        width: 350px;
+    }
+}
+
+@media screen and (min-width: 535px) {
+    .input {
+        width: 450px;
+    }
+}
+
+@media screen and (min-width: 635px) {
+    .input {
+        width: 550px;
+    }
+}
+
+@media screen and (min-width: 735px) {
+    .input {
+        width: 650px;
+    }
+}
+
+@media screen and (min-width: 835px) {
+    .input {
+        width: 750px;
+    }
+}
+
+@media screen and (min-width: 965px) {
+    .input {
+        width: 650px;
+    }
 }
