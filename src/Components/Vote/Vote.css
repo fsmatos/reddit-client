@@ -1,0 +1,21 @@
+.vote-container {
+    display: flex;
+    align-items: center;
+}
+
+.classification-number {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.arrow {
+    font-size: 25px;
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 3px;
+}
+
+.arrow:hover {
+    background-color: #D0D5D9;
+}

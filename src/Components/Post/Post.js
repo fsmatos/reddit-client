@@ -1,26 +1,10 @@
 import React, {useState} from "react";
 import './Post.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownLong, faUpLong, faComments } from '@fortawesome/free-solid-svg-icons'
+import { Vote } from "../Vote/Vote";
+import { Comment } from "../Comment/Comment";
 
 export const Post = () => {
   const [show, setShow] = useState(false);
-  const [color, setColor] = useState(false);
-  const [backgroundColor, setBackgroundColor] = useState(false);
-
-  let newBackgroundColor;
-  if (!backgroundColor) {
-    newBackgroundColor = "#f2f2f2";
-  } else {
-    newBackgroundColor = "#D0D5D9";
-  }
-
-  let newColor;
-  if (!color) {
-      newColor = "#575759";
-  } else {
-      newColor = "#F23005";
-  }
 
   return (
     <div className="post-container">
@@ -41,13 +25,10 @@ export const Post = () => {
             <div className="post-share">
                 <p>Time</p>
                 <div className="post-vote">
-                    <FontAwesomeIcon className="arrow" icon={faUpLong} />
-                    <p className="classification-number">#number</p>
-                    <FontAwesomeIcon className="arrow" icon={faDownLong} />
+                  <Vote />
                 </div>
-                <div onMouseEnter={() => setBackgroundColor(!backgroundColor)} onMouseLeave={() => setBackgroundColor(!backgroundColor)} onClick={() => {setShow(!show); setColor(!color)}} style={{color:newColor, backgroundColor:newBackgroundColor}} className="post-comments">
-                    <FontAwesomeIcon className="comments-icon" icon={faComments} />
-                    <a className="post-share-comments">Comments</a>
+                <div className="post-comments" onClick={() => setShow(!show)}>
+                    <Comment />
                 </div>
             </div>
             {show? <div className="comment-container">

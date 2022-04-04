@@ -45,6 +45,7 @@
 .post-vote {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .post-subreddit-image {
@@ -77,15 +78,6 @@
     grid-column: 1 / 4;
     grid-row: 3 / 4;
     transition: 0.2s;
-}
-
-.post-comments {
-    display: flex;
-    justify-content: space-between;
-    transition: 0.2s;
-    cursor: pointer;
-    border-radius: 8px;
-    padding: 8px;
 }
 
 .post-share-comments {
@@ -124,15 +116,6 @@
 
 .author-comment-time {
     grid-column: 3 / 4;
-}
-
-.arrow {
-    transition: 0.2s;
-    cursor: pointer;
-}
-
-.arrow:hover {
-    color: #F23005;
 }
 
 .highlight {

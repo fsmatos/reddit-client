@@ -24,6 +24,10 @@ nav {
     display: none;
 }
 
+.mini {
+    color: #F23005;
+}
+
 .search {
     grid-column: 2 / 3;
     display: flex;

@@ -1,0 +1,8 @@
+.comments-container {
+    display: flex;
+    justify-content: space-between;
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 8px;
+}

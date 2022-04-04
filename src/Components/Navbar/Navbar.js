@@ -8,7 +8,7 @@ export const Navbar = () => {
     <nav>
       <div className="logo">
         <img className="reddit-logo" src={reddit} />
-        <h1>Reddit <strong>Mini</strong></h1>
+        <h1>Reddit <strong className="mini">Mini</strong></h1>
       </div>
       <div className="search">
         <Search />

@@ -21,6 +21,10 @@
     cursor: pointer;
 }
 
+.about-footer:hover, .issue-footer:hover {
+    color: #F23005;
+}
+
 @media screen and (min-width: 1225px) {
     .foot {
         padding: 30px;

@@ -63,4 +63,14 @@
     .input {
         width: 650px;
     }
+
+    .magnifying-glass {
+        display: block;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .magnifying-glass:hover {
+        color: #F23005;
+    }
 }
