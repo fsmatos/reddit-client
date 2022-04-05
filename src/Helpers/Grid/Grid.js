@@ -5,6 +5,8 @@ import { Footer } from "../../Components/Footer/Footer";
 import { Filter } from "../../Components/Filter/Filter";
 import { Subreddit } from "../../Components/Subreddit/Subreddit";
 import { Post } from "../../Components/Post/Post";
+import { AllSubreddits } from "../../Features/allSubreddits/AllSubreddits";
+
 export const Grid = () => {
   return (
     <div className="container">
@@ -12,7 +14,7 @@ export const Grid = () => {
             <Navbar />
         </header>
         <aside>
-            <Subreddit />
+            <AllSubreddits />
         </aside>
         <div className="filter">
             <Filter />

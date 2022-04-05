@@ -1,46 +1,31 @@
-.subreddit-container {
-    display: flex;
-    flex-direction: column;
-    background-color: #f2f2f2;
+.individual-subreddit {
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 1px 1px 5px -2px #575759;
-    padding-top: 30px;
-    padding-left: 25px;
-    padding-right: 25px;
-}
-
-.featured-subreddits {
-    padding-bottom: 5px;
-}
-
-.subreddits-list {
-    padding-top: 15px;
-}
-
-.subreddit-page {
-    display: flex;
-    align-items: center;
-    padding-bottom: 30px;
-}
-
-.subreddit-image {
-    background-color: #575759;
-    border-radius: 50px;
-    width: 50px;
-    height: 50px;
 }
 
 .subreddit-info {
     display: flex;
-    flex-direction: column;
-    padding-left: 10px;
+    padding: 10px;
     cursor: pointer;
     transition: 0.2s;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.subreddit-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #575759;
 }
 
 .subreddit-info:hover {
-    color: #F23005;
+    background-color: #D0D5D9;
+}
+
+.subreddit-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
 }
 
 .subreddit-title {
