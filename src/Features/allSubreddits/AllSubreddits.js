@@ -25,9 +25,10 @@ export const AllSubreddits = () => {
                 <h2>FEATURED SUBREDDITS</h2>
             </div>
             <hr></hr>
+            {renderSubreddits()}
             <ul className='subreddits-list'>
                 {subreddits.map((subreddit) => 
-                        <li className="subreddit-page"><Subreddit id={subreddit.data.id} name={subreddit.data.display_name_prefixed} subs={subreddit.data.subscribers} icon={subreddit.data.icon_img===""?reddit:subreddit.data.icon_img}/></li>
+                        <li className="subreddit-page"><Subreddit id={subreddit.data.id} name={subreddit.data.display_name_prefixed} subs={subreddit.data.subscribers} icon={subreddit.data.icon_img===""?reddit:subreddit.data.icon_img} /></li>
                     )}
             </ul>
         </div>

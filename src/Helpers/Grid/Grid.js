@@ -3,9 +3,8 @@ import './Grid.css';
 import {Navbar} from '../../Components/Navbar/Navbar';
 import { Footer } from "../../Components/Footer/Footer";
 import { Filter } from "../../Components/Filter/Filter";
-import { Subreddit } from "../../Components/Subreddit/Subreddit";
-import { Post } from "../../Components/Post/Post";
 import { AllSubreddits } from "../../Features/allSubreddits/AllSubreddits";
+import { AllPosts } from "../../Features/allPosts/AllPosts";
 
 export const Grid = () => {
   return (
@@ -20,7 +19,7 @@ export const Grid = () => {
             <Filter />
         </div>
         <main>
-            <Post />
+            <AllPosts />
         </main>
         <footer>
             <Footer />
