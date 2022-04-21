@@ -15,7 +15,16 @@ const subredditsSlice = createSlice({
             state.loading = true
         },
         getSubredditsSuccess: (state, { payload }) => {
-            state.subreddits = payload
+            payload.map(subreddit => state.subreddits = [
+                ...state.subreddits,
+                subreddit = {
+                    title: subreddit.data.title,
+                    display_name_prefixed: subreddit.data.display_name_prefixed,
+                    id: subreddit.data.id,
+                    subscribers: subreddit.data.subscribers,
+                    icon_img: subreddit.data.icon_img
+                }
+            ])
             state.loading = false
             state.hasErrors = false
         },

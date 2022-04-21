@@ -8,8 +8,8 @@ export const Footer = () => {
     <div className="foot">
         <p className="francisco">© 2022 Francisco Matos</p>
         <div className="info-foot">
-            <a className="about-footer">About</a>
-            <a className="issue-footer">Issue</a>
+          <a href="https://github.com/fsmatos/reddit-client" target="_blank" className="about-footer">About</a>
+          <a href="https://github.com/fsmatos/reddit-client/issues" target="_blank" className="issue-footer">Issue</a>
         </div>
     </div>
   );

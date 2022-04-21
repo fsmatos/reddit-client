@@ -9,6 +9,8 @@
     transition: 0.2s;
     align-items: center;
     border-radius: 8px;
+    text-decoration: none;
+    color: #575759;
 }
 
 .subreddit-image {

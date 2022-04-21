@@ -10,16 +10,22 @@ export const Comments = (props) => {
     const [color, setColor] = useState(false);
     const [backgroundColor, setBackgroundColor] = useState(false);
 
-    //Time conversion + how long is the post published
-    const getCommentTime = (time) => {
-        const commentDate = new Date(time*1000);
-        const commentLocaleTimeString =  commentDate.toLocaleTimeString([], {hour: '2-digit'});
+    //Manage time of comments
+    const commentsTime = (time) => {
+    const commentUTC = time;
+    const todayUTC = Math.round(new Date().getTime()/1000);
+    const dif = todayUTC - commentUTC;
 
-        const now = new Date();
-        let hour = now.getHours();
-
-        return hour -  commentLocaleTimeString
+    if(dif <= 59) {
+        return (`${dif} seconds ago`);
+    } else if(dif >= 60 && dif <= 3599) {
+        return (`${Math.round(dif / 60)} minutes ago`);
+    } else if(dif >= 3600 && dif <= 86399) {
+        return (`${Math.round((dif / 60) / 60)} hours ago`);
+    } else if(dif >= 86400) {
+        return (`${Math.round(((dif/60)/60)/24)} days ago`);
     }
+  }
 
     //Control how many comments show up
     const commentsFirstHalf = comments.slice(0, comments.length/2);
@@ -36,7 +42,7 @@ export const Comments = (props) => {
                                     <h3 className="author-comment-name">{comment.author}</h3>
                                     <p>{comment.body}</p>
                                 </div>
-                                <p className="comment-time">{getCommentTime(comment.created_utc)} hours ago</p>
+                                <p className="comment-time">{commentsTime(comment.created_utc)}</p>
                             </li>
                         )}
                         {(commentsSecondHalf).map(commentSecond => 
@@ -45,7 +51,7 @@ export const Comments = (props) => {
                                     <h3 className="author-comment-name">{commentSecond.author}</h3>
                                     <p>{commentSecond.body}</p>
                                 </div>
-                                <p className="comment-time">{getCommentTime(commentSecond.created_utc)} hours ago</p>
+                                <p className="comment-time">{commentsTime(commentSecond.created_utc)}</p>
                             </li>    
                         )}
                     </ul>
@@ -63,7 +69,7 @@ export const Comments = (props) => {
                                     <h3 className="author-comment-name">{comment.author}</h3>
                                     <p>{comment.body}</p>
                                 </div>
-                                <p className="comment-time">{getCommentTime(comment.created_utc)} hours ago</p>
+                                <p className="comment-time">{commentsTime(comment.created_utc)}</p>
                             </li>
                         )}
                     </ul>

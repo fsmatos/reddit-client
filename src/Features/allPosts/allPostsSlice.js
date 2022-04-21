@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const initialState = {
     loading: false,
     hasErrors: false,
+    searchTerm: "",
     posts: [],
 }
 
@@ -37,6 +38,12 @@ const postsSlices = createSlice({
             state.loading = false
             state.hasErrors = true
         },
+        resetPosts: state => {
+            state.posts = [];
+        },
+        getSearchTerm: (state, {payload}) => {
+            state.searchTerm = payload;
+        },
         getComments: (state, {payload}) => {
             const parent_id = payload[0].data.parent_id.replace("t3_","");
             state.posts.map(post => {
@@ -56,15 +63,16 @@ const postsSlices = createSlice({
     },
 });
 
-export const { getPosts, getPostsSuccess, getPostsFailure, getComments } = postsSlices.actions
+export const { getPosts, getPostsSuccess, getPostsFailure, resetPosts, getSearchTerm, getComments } = postsSlices.actions
+export const searchSelecotr = state => state.searchTerm
 export const postsSelector = state => state.posts
 export default postsSlices.reducer
 
-export function fetchPosts() {
+export function fetchPosts(link) {
     return async dispatch => {
         dispatch(getPosts())
         try {
-            const response = await fetch('https://www.reddit.com/r/popular/.json')
+            const response = await fetch("https://www.reddit.com/"+link)
             const data = await response.json()
             dispatch(getPostsSuccess(data.data.children))
         } catch(error) {
@@ -78,6 +86,12 @@ export function fetchComments(link) {
         const response = await fetch(link)
         const data = await response.json()
         dispatch(getComments(data[1].data.children))
+    }
+}
+
+export function setSearchTerm(term) {
+    return dispatch => {
+        dispatch(getSearchTerm(term))
     }
 }
 

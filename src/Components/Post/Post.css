@@ -11,50 +11,33 @@
     border-radius: 8px;
     box-shadow: 1px 1px 5px -2px #575759;
     display: grid;
-    grid-template-columns: 1fr ;
-    grid-template-rows: 1fr auto auto;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 15px;
-    grid-gap: 15px;
+    grid-gap: 25px;
+    grid-template-rows: auto auto auto auto auto;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 25px;
 }
 
-.post-text {
-    grid-column: 1 / 2;
+.post-author {
     grid-row: 1 / 2;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    align-items: center;
-    padding-top: 10px;
-    grid-gap: 15px;
-}
-
-.post-image {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-}
-
-.post-image-thumbnail {
-    width: 100%;
-}
-
-.post-share {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-.post-time {
-    padding: 5px;
-}
-
-.post-vote {
+.post-author-subreddit {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.post-on-subreddit {
+    margin-bottom: 8px;
+    margin-left: 8px;
+}
+
+.post-by {
+    margin-left: 8px;
 }
 
 .post-subreddit-image {
@@ -62,27 +45,28 @@
     height: 50px;
     border-radius: 50%;
     border: 3px solid #575759;
+    margin-right: 5px;
 }
 
-.post-on-subreddit {
-    padding-bottom: 5px;
-}
-
-.post-author {
-    display: flex;
-    align-items: center;
-}
-
-.post-description {
+.post-text {
     grid-row: 2 / 3;
+    line-height: 20px;
 }
 
+.post-image {
+    grid-row: 3 / 4;
+}
 
-.comment-container {
-    border-top: 0.5px solid #575759;
-    grid-column: 1 / 4;
+.post-image-thumbnail {
+    width: 100%;
+}
+
+.post-rate {
     grid-row: 4 / 5;
-    transition: 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    padding-left: 5px;
 }
 
 .comment-button {
@@ -92,37 +76,13 @@
 }
 
 .post-share-comments {
-    padding-left: 5px;
+    margin-left: 8px;
 }
 
-.highlight {
-    color: #F23005;
+.comment-container {
+    border-top: 0.5px solid #57575956;
+    transition: 0.2s;
 }
 
-@media screen and (min-width: 482px) {
-    .post-container {
-        grid-gap: 15px;
-    }
-    
-    .individual-post {
-        display: grid;
-        padding: 30px;
-        grid-gap: 15px;
-    }
 
-    .post-share {
-        grid-column: 1 / 4;
-    }
-    
-    .post-author {
-        grid-row: 1 / 2;
-    }
-    
-    .post-on-subreddit {
-        padding-left: 20px;
-    }
 
-    .post-by {
-        padding-left: 20px;
-    }
-}

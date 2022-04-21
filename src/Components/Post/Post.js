@@ -15,22 +15,29 @@ export const Post = (props) => {
   const {author, title, sub, score, numOfComments, subredditId, image, link, comments, time} = props;
   const { subreddits } = useSelector(subredditsSelector);
 
-  
-  //Time conversion + how long is the post published
-  const postDate = new Date(time*1000);
-  const postLocaleTimeString =  postDate.toLocaleTimeString([], {hour: '2-digit'});
+  //Manage time of posts
+  const postTime = (time) => {
+    const postUTC = time;
+    const todayUTC = Math.round(new Date().getTime()/1000);
+    const dif = todayUTC - postUTC;
 
-  const now = new Date();
-  let hour = now.getHours();
-
-  const postTime = hour -  postLocaleTimeString;
+    if(dif <= 59) {
+        return (`${dif} seconds ago`);
+    } else if(dif >= 60 && dif <= 3599) {
+        return (`${Math.round(dif / 60)} minutes ago`);
+    } else if(dif >= 3600 && dif <= 86399) {
+        return (`${Math.round((dif / 60) / 60)} hours ago`);
+    } else if(dif >= 86400) {
+        return (`${Math.round(((dif/60)/60)/24)} days ago`);
+    }
+  }
 
   //Manage profile pictures
   let objectSubreddit = {};
   subreddits.map((subreddit) =>  {
       objectSubreddit = {
           ...objectSubreddit,
-          [`${[subreddit.data.id]}`] : subreddit.data.icon_img
+          [`${[subreddit.id]}`] : subreddit.icon_img
       }
     });
 
@@ -56,26 +63,20 @@ export const Post = (props) => {
   return (
     <div className="post-container">
         <div className="individual-post">
-            <div className="post-text">
-                <div className="post-author">
-                    <div><img className="post-subreddit-image" src={objectSubreddit[subredditId]===""||objectSubreddit[subredditId]===undefined?reddit:objectSubreddit[subredditId]}/></div>
-                    <div className="post-subreddit-info">
-                        <h3 className="post-on-subreddit">{sub}</h3>
-                        <p className="post-by">{author}</p>
-                    </div>
-                </div>
-                <div className="post-description">
-                    <h2 className="post-title">{title}</h2>
+            <div className="post-author">
+                <img className="post-subreddit-image" src={objectSubreddit[subredditId]===""||objectSubreddit[subredditId]===undefined?reddit:objectSubreddit[subredditId]}></img>
+                <div className="post-author-subreddit">
+                    <h3 className="post-on-subreddit">{sub}</h3>
+                    <p className="post-by">{author}</p>
                 </div>
             </div>
+            <div className="post-text">
+                <h2 className="post-title">{title}</h2>
+            </div>
             <div className="post-image">{/\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(image)?<img className="post-image-thumbnail" src={image}/>:<img style={{display:"none"}}/>}</div>
-            <div className="post-share">
-                <div className="post-time">
-                    <p>{postTime} hours ago</p>
-                </div>
-                <div className="post-vote">
-                    <Vote score={score}/>
-                </div>
+            <div className="post-rate">
+                <p>{postTime(time)}</p>
+                <Vote score={score}/>
                 <div className="post-comments" onClick={() => setShow(!show)}>
                     <div onMouseEnter={() => setBackgroundColor(!backgroundColor)} onMouseLeave={() => setBackgroundColor(!backgroundColor)} onClick={() => {setColor(!color)}} style={{color:newColor, backgroundColor:newBackgroundColor}} className="comment-button">
                         <FontAwesomeIcon className="comments-icon" icon={faComments} />

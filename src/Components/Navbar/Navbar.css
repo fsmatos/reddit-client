@@ -40,6 +40,8 @@ nav {
     transition: 0.2s;
     cursor: pointer;
     display: none;
+    text-decoration: none;
+    color: #575759;
 }
 
 .issue {
@@ -48,6 +50,8 @@ nav {
     transition: 0.2s;
     cursor: pointer;
     display: none;
+    text-decoration: none;
+    color: #575759;
 }
 
 .about:hover, .issue:hover {

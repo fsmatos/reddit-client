@@ -23,6 +23,8 @@
     display: flex;
     cursor: pointer;
     transition: 0.2s;
+    text-decoration: none;
+    color: #575759;
 }
 
 .hot {
@@ -30,6 +32,8 @@
     display: flex;
     cursor: pointer;
     transition: 0.2s;
+    text-decoration: none;
+    color: #575759;
 }
 
 .new {
@@ -37,6 +41,8 @@
     display: flex;
     cursor: pointer;
     transition: 0.2s;
+    text-decoration: none;
+    color: #575759;
 }
 
 .rising {
@@ -44,6 +50,8 @@
     display: flex;
     cursor: pointer;
     transition: 0.2s;
+    text-decoration: none;
+    color: #575759;
 }
 
 .top {
@@ -51,6 +59,8 @@
     display: flex;
     cursor: pointer;
     transition: 0.2s;
+    text-decoration: none;
+    color: #575759;
 }
 
 .all:hover, .hot:hover, .new:hover, .rising:hover, .top:hover {

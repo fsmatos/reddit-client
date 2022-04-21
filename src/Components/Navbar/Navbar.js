@@ -14,8 +14,8 @@ export const Navbar = () => {
         <Search />
       </div>
       <div className="info">
-        <a className="about">About</a>
-        <a className="issue">Issue</a>
+        <a href="https://github.com/fsmatos/reddit-client" target="_blank" className="about">About</a>
+        <a href="https://github.com/fsmatos/reddit-client/issues" target="_blank" className="issue">Issue</a>
       </div>
     </nav>
   );
