@@ -13,6 +13,11 @@
     margin-right: 8px;
 }
 
+.clear {
+    position: absolute;
+    margin-left: 590px;
+}
+
 .magnifying-glass {
     display: none;
 }

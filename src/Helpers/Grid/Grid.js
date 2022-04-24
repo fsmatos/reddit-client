@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import React, { useEffect} from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './Grid.css';
 import {Navbar} from '../../Components/Navbar/Navbar';
 import { Footer } from "../../Components/Footer/Footer";
@@ -22,7 +22,8 @@ export const Grid = () => {
             </div>
             <main>
                 <Routes>
-                    <Route exact path=':id' element={<AllPosts />}></Route>
+                    <Route exact path='/' element={<AllPosts />}></Route>
+                    <Route exact path='/:id' element={<AllPosts />}></Route>
                 </Routes>
             </main>
             <footer>

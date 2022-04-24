@@ -28,7 +28,7 @@ export const AllSubreddits = () => {
             {renderSubreddits()}
             <ul className='subreddits-list'>
                 {subreddits.map((subreddit, key) => 
-                        <li key={key} className="subreddit-page"><Subreddit title={subreddit.title} id={subreddit.id} name={subreddit.display_name_prefixed} subs={subreddit.subscribers} icon={subreddit.icon_img===""?reddit:subreddit.icon_img} /></li>
+                        <li key={key} className="subreddit-page"><Subreddit display_name_prefixed={subreddit.display_name_prefixed} id={subreddit.id} name={subreddit.display_name_prefixed} subs={subreddit.subscribers} icon={subreddit.icon_img===""?reddit:subreddit.icon_img} /></li>
                     )}
             </ul>
         </div>

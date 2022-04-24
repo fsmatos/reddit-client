@@ -3,7 +3,9 @@ import { createSlice } from '@reduxjs/toolkit'
 export const initialState = {
     loading: false,
     hasErrors: false,
+    start: true,
     searchTerm: "",
+    where: "all",
     posts: [],
 }
 
@@ -38,11 +40,17 @@ const postsSlices = createSlice({
             state.loading = false
             state.hasErrors = true
         },
+        getStart: state => {
+            state.start = false
+        },
         resetPosts: state => {
             state.posts = [];
         },
         getSearchTerm: (state, {payload}) => {
             state.searchTerm = payload;
+        },
+        getWhere: (state, {payload}) => {
+            state.where = payload;
         },
         getComments: (state, {payload}) => {
             const parent_id = payload[0].data.parent_id.replace("t3_","");
@@ -63,8 +71,7 @@ const postsSlices = createSlice({
     },
 });
 
-export const { getPosts, getPostsSuccess, getPostsFailure, resetPosts, getSearchTerm, getComments } = postsSlices.actions
-export const searchSelecotr = state => state.searchTerm
+export const { getPosts, getPostsSuccess, getPostsFailure, getStart, resetPosts, getSearchTerm, getWhere, getComments } = postsSlices.actions
 export const postsSelector = state => state.posts
 export default postsSlices.reducer
 
@@ -92,6 +99,12 @@ export function fetchComments(link) {
 export function setSearchTerm(term) {
     return dispatch => {
         dispatch(getSearchTerm(term))
+    }
+}
+
+export function setWhere(location) {
+    return dispatch => {
+        dispatch(getWhere(location))
     }
 }
 
