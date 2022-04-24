@@ -3,7 +3,6 @@ import { createSlice } from '@reduxjs/toolkit'
 export const initialState = {
     loading: false,
     hasErrors: false,
-    start: true,
     searchTerm: "",
     where: "all",
     posts: [],
@@ -40,9 +39,6 @@ const postsSlices = createSlice({
             state.loading = false
             state.hasErrors = true
         },
-        getStart: state => {
-            state.start = false
-        },
         resetPosts: state => {
             state.posts = [];
         },
@@ -71,7 +67,7 @@ const postsSlices = createSlice({
     },
 });
 
-export const { getPosts, getPostsSuccess, getPostsFailure, getStart, resetPosts, getSearchTerm, getWhere, getComments } = postsSlices.actions
+export const { getPosts, getPostsSuccess, getPostsFailure, resetPosts, getSearchTerm, getWhere, getComments } = postsSlices.actions
 export const postsSelector = state => state.posts
 export default postsSlices.reducer
 

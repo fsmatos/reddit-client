@@ -36,8 +36,8 @@ export const Comments = (props) => {
             return (
                 <div className="comments-show">
                     <ul>
-                        {commentsFirstHalf.map(comment => 
-                            <li className="individual-comment">
+                        {commentsFirstHalf.map((comment, key) => 
+                            <li key={key} className="individual-comment">
                                 <div className="author-comment-info">
                                     <h3 className="author-comment-name">{comment.author}</h3>
                                     <p>{comment.body}</p>
@@ -63,8 +63,8 @@ export const Comments = (props) => {
             return (
                 <div className="comments-show">
                     <ul>
-                        {commentsFirstHalf.map(comment => 
-                            <li className="individual-comment">
+                        {commentsFirstHalf.map((comment, key) => 
+                            <li key={key} className="individual-comment">
                                 <div className="author-comment-info">
                                     <h3 className="author-comment-name">{comment.author}</h3>
                                     <p>{comment.body}</p>
