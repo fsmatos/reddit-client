@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { postsSelector, setSearchTerm, setWhere } from "../../Features/allPosts/allPostsSlice";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setWhere } from "../../Features/allPosts/allPostsSlice";
 import './Search.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 export const Search = () => {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {where, searchTerm} = useSelector(postsSelector);
   const [localSearchTerm, setLocalSearchTerm] = useState('');
 
   const handleSearchInput = (e) => {
@@ -19,14 +17,12 @@ export const Search = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    dispatch(setSearchTerm(localSearchTerm))
-    dispatch(setWhere(localSearchTerm))
-    navigate(localSearchTerm)
+    dispatch(setWhere(`search.json?q=${localSearchTerm}`))
   }
 
   useEffect(() => {
-    if(localSearchTerm === "" && searchTerm === where) {
-      navigate(-1)
+    if(localSearchTerm === "") {
+      dispatch(setWhere(`r/all/.json`))
     } 
   })
   
@@ -34,7 +30,7 @@ export const Search = () => {
   return (
     <form className="search-container" onSubmit={onFormSubmit}>
         <input className="input" placeholder="Search" type="search" value={localSearchTerm} onChange={handleSearchInput}/>
-        <Link to={localSearchTerm} onClick={() => {dispatch(setSearchTerm(localSearchTerm)); dispatch(setWhere(localSearchTerm))}} type="submit"><FontAwesomeIcon icon= {faMagnifyingGlass} className="magnifying-glass" /></Link>
+        <FontAwesomeIcon onClick={() => dispatch(setWhere(`search.json?q=${localSearchTerm}`))} icon= {faMagnifyingGlass} className="magnifying-glass" />
     </form>
   );
 };

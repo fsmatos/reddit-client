@@ -1,28 +1,27 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import './AllPosts.css';
 import { useDispatch, useSelector } from "react-redux";
-import { resetPosts, fetchPosts, postsSelector } from "./allPostsSlice";
+import './AllPosts.css';
+import { fetchPosts, postsSelector, resetPosts } from "./allPostsSlice";
 import { Post } from "../../Components/Post/Post";
 
-export const AllPosts = (props) => {
-    const {id} = useParams();
+export const AllPosts = () => {
     const dispatch = useDispatch();
-    const { posts, loading, hasErrors, searchTerm } = useSelector(postsSelector);
+    const { posts, where, loading, hasErrors } = useSelector(postsSelector);
 
     // Dispatch thunk when component first mounts
     useEffect(() => {
         dispatch(resetPosts());
-        if(id==='hot' || id==='rising' || id==='top' || id==='new') {
+        dispatch(fetchPosts(where))
+        /*if(id==='hot' || id==='rising' || id==='top' || id==='new') {
             dispatch(fetchPosts(id+"/.json"))
         } else if(id === searchTerm){
             dispatch(fetchPosts(`search.json?q=${id}`))
         } else if(!id) {
             dispatch(fetchPosts(`r/all/.json`))
-        } else {
+        } else if (searchTerm !== "empty"){
             dispatch(fetchPosts(`r/${id}/.json`))
-        }
-    },[searchTerm,id]);
+        }*/
+    },[where]);
 
     const renderPosts = () => {
         if (loading) return <p>Loading posts...</p>

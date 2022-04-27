@@ -1,10 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { faGlobe, faCertificate, faFire, faArrowTrendUp, faChartSimple } from '@fortawesome/free-solid-svg-icons'
 
 export const initialState = {
     loading: false,
     hasErrors: false,
-    searchTerm: "",
-    where: "all",
+    filters: [
+        {name: "All", icon: faGlobe, link:"r/all/.json", className:"all"},
+        {name: "Hot", icon: faFire, link:"hot/.json", className:"hot"},
+        {name: "New", icon: faCertificate, link:"new/.json", className:"new"},
+        {name: "Rising", icon: faArrowTrendUp, link:"rising/.json", className:"rising"},
+        {name: "Top", icon: faChartSimple, link:"top/.json", className:"top"}
+    ],
+    where: 'r/all/.json',
     posts: [],
 }
 
@@ -42,9 +49,6 @@ const postsSlices = createSlice({
         resetPosts: state => {
             state.posts = [];
         },
-        getSearchTerm: (state, {payload}) => {
-            state.searchTerm = payload;
-        },
         getWhere: (state, {payload}) => {
             state.where = payload;
         },
@@ -67,7 +71,7 @@ const postsSlices = createSlice({
     },
 });
 
-export const { getPosts, getPostsSuccess, getPostsFailure, resetPosts, getSearchTerm, getWhere, getComments } = postsSlices.actions
+export const { getPosts, getPostsSuccess, getPostsFailure, resetPosts, getWhere, getComments } = postsSlices.actions
 export const postsSelector = state => state.posts
 export default postsSlices.reducer
 
@@ -75,7 +79,7 @@ export function fetchPosts(link) {
     return async dispatch => {
         dispatch(getPosts())
         try {
-            const response = await fetch("https://www.reddit.com/"+link)
+            const response = await fetch(`https://www.reddit.com/${link}`)
             const data = await response.json()
             dispatch(getPostsSuccess(data.data.children))
         } catch(error) {
@@ -92,15 +96,11 @@ export function fetchComments(link) {
     }
 }
 
-export function setSearchTerm(term) {
+export function setWhere(where) {
     return dispatch => {
-        dispatch(getSearchTerm(term))
+        dispatch(getWhere(where));
     }
 }
 
-export function setWhere(location) {
-    return dispatch => {
-        dispatch(getWhere(location))
-    }
-}
+
 
