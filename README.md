@@ -35,7 +35,7 @@ reddit-mini/src
 - Project carried out as part of the Codecademy Front-end Engineer Career Path
 - The Reddit JSON API was used to access the Reddit data
 
-![Screenshot 2022-04-29 at 12 25 00](https://user-images.githubusercontent.com/64935395/165935658-addf425d-1abe-4a4d-9c1b-2099d79d5fcb.png)
+![Screenshot 2022-04-29 at 12 25 00](../Screenshot%202022-04-29%20at%2018.49.40.png)
 
 
 
