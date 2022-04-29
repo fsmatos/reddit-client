@@ -70,7 +70,7 @@
     color: #F23005;
 }
 
-@media screen and (min-width: 1225px) {
+@media screen and (min-width: 1680px) {
     .filter-container {
         border-radius: 8px;
         padding: 15px;

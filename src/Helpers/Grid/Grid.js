@@ -12,14 +12,12 @@ export const Grid = () => {
         <header>
             <Navbar />
         </header>
-        <aside>
-            <AllSubreddits />
-        </aside>
         <div className="filter">
             <Filter />
         </div>
         <main>
-            <AllPosts />
+            <AllSubreddits className="all-subreddits"/>
+            <AllPosts className="all-posts"/>
         </main>
         <footer>
             <Footer />

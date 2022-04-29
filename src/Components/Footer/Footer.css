@@ -1,7 +1,7 @@
 .foot {
     display: flex;
     padding: 10px;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .info-foot {

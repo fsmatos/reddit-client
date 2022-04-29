@@ -14,7 +14,7 @@ export const Filter = () => {
                 return (
                     <div key={key} onClick={() => dispatch(setWhere(filter.link))} className={where===filter.link?`${filter.className} active`:filter.className} >
                         <FontAwesomeIcon className="icon" icon={filter.icon} />
-                        <p>{filter.name}</p>
+                        <p className="filter-text">{filter.name}</p>
                     </div>
                 )
             })}
